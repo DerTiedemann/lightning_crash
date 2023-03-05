@@ -1,0 +1,40 @@
+[package]
+name = "lightning_crash"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "lightning_crash"
+path = "src/lib.rs"
+
+[[bin]]
+name = "proxy"
+path = "src/proxy.rs"
+
+
+[[bin]]
+name = "test"
+path = "src/main.rs"
+
+[[bin]]
+name = "rtmp"
+path = "src/server.rs"
+
+[dependencies]
+anyhow = "1.0.69"
+byteorder = "1.4.3"
+bytesio = "0.1.27"
+chrono = "0.4.23"
+clap = { version = "4.1.6", features = ["derive"] }
+derivative = "2.2.0"
+futures = "0.3.26"
+hexdump = "0.1.1"
+log = "0.4.17"
+rand = "0.8.5"
+rtmp = "0.1.0"
+# rustls = "0.20.8"
+rustls = { git = "https://github.com/rustls/rustls.git", tag = "v/0.21.0-alpha.1" }
+thiserror = "1.0.38"
+tokio = { version = "1.25.0", features = ["full"] }
+tokio-stream = "0.1.12"
+webpki-roots = "0.22.6"
